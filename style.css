@@ -411,3 +411,7 @@ footer {
 .custom-stat-card .empty-card {
   opacity: 0.55;
 }
+
+.rune-clone {
+  color: #2f6fff;
+}
