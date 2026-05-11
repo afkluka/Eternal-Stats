@@ -36,7 +36,7 @@
 const runes = [
   { name: "Rune 1" },
   { name: "Points Rune" },
-  { name: "Rune 3" },
+  { name: "Balls Rune" },
   { name: "Rune 4" },
   { name: "Rune 5" },
   { name: "Rune 6" },
@@ -46,87 +46,27 @@ const runes = [
   { name: "Rune 10" }
 ];
 
-const pointsRuneStats = [
-  {
-    name: "Point Prism",
-    chance: "1 in 2",
-    owned: "Maxed at 2k Runes",
-    color: "#c9b987",
-    stats: [
-      ["x5", "Exp"],
-      ["x5", "Points"]
-    ]
-  },
-  {
-    name: "Score Core",
-    chance: "1 in 50",
-    owned: "Maxed at 1.7k Runes",
-    color: "#78c47a",
-    stats: [
-      ["x6", "Exp"],
-      ["x6", "Points"]
-    ]
-  },
-  {
-    name: "Pulse Token",
-    chance: "1 in 200",
-    owned: "Maxed at 1.5k Runes",
-    color: "#6799c9",
-    stats: [
-      ["x2", "Balls"],
-      ["x7", "Exp"],
-      ["x7", "Points"]
-    ]
-  },
-  {
-    name: "Mind Shard",
-    chance: "1 in 1k",
-    owned: "Maxed at 1.4k Runes",
-    color: "#a961c9",
-    stats: [
-      ["x3", "Balls"],
-      ["x8", "Exp"],
-      ["x8", "Points"]
-    ]
-  },
-  {
-    name: "Echo Point",
-    chance: "1 in 5k",
-    owned: "Maxed at 3k Runes",
-    color: "#c9bd45",
-    stats: [
-      ["x4", "Balls"],
-      ["x10", "Exp"],
-      ["x10", "Points"]
-    ]
-  },
-  {
-    name: "Apex Counter",
-    chance: "1 in 75k",
-    owned: "Maxed at 10k Runes",
-    color: "#c84ac4",
-    stats: [
-      ["x5", "Balls"],
-      ["x10", "Exp"],
-      ["x2", "Nebulosa"],
-      ["x10", "Points"],
-      ["x4", "Rune Bulk"],
-      ["x4", "Rune Luck"]
-    ]
-  },
-  {
-    name: "Eternity Prism",
-    chance: "1 in 5Sp",
-    owned: "Maxed at 108M Runes",
-    color: "#76b7cc",
-    stats: [
-      ["x250", "Exp"],
-      ["x1k", "Points"],
-      ["x10", "Rune Bulk"],
-      ["x15", "Rune Speed"]
-    ]
-  }
-];
+const runeData = {
+  2: [
+    { name: "Point Prism", chance: "1 in 2", owned: "Maxed at 2k Runes", color: "#c9b987", stats: [["x5","Exp"],["x5","Points"]] },
+    { name: "Score Core", chance: "1 in 50", owned: "Maxed at 1.7k Runes", color: "#78c47a", stats: [["x6","Exp"],["x6","Points"]] },
+    { name: "Pulse Token", chance: "1 in 200", owned: "Maxed at 1.5k Runes", color: "#6799c9", stats: [["x2","Balls"],["x7","Exp"],["x7","Points"]] },
+    { name: "Mind Shard", chance: "1 in 1k", owned: "Maxed at 1.4k Runes", color: "#a961c9", stats: [["x3","Balls"],["x8","Exp"],["x8","Points"]] },
+    { name: "Echo Point", chance: "1 in 5k", owned: "Maxed at 3k Runes", color: "#c9bd45", stats: [["x4","Balls"],["x10","Exp"],["x10","Points"]] },
+    { name: "Apex Counter", chance: "1 in 75k", owned: "Maxed at 10k Runes", color: "#c84ac4", stats: [["x5","Balls"],["x10","Exp"],["x2","Nebulosa"],["x10","Points"],["x4","Rune Bulk"],["x4","Rune Luck"]] },
+    { name: "Eternity Prism", chance: "1 in 5Sp", owned: "Maxed at 108M Runes", color: "#76b7cc", stats: [["x250","Exp"],["x1k","Points"],["x10","Rune Bulk"],["x15","Rune Speed"]] }
+  ],
+
+  3: [
+    { name: "Sphere Seed", chance: "1 in 2", owned: "Maxed at 4k", color: "#c9b987", stats: [["x5","Balls"],["x5","Exp"],["x5","Points"]] },
+    { name: "Orbit Core", chance: "1 in 100", owned: "Maxed at 3k", color: "#78c47a", stats: [["x3","Balls"],["x7","Exp"],["x7","Points"]] },
+    { name: "Pulse Orb", chance: "1 in 250", owned: "Maxed at 2.4k", color: "#6799c9", stats: [["x4","Balls"],["x8","Exp"],["x8","Points"]] },
+    { name: "Nova Marble", chance: "1 in 1k", owned: "Maxed at 2.3k", color: "#a961c9", stats: [["x5","Balls"],["x10","Exp"],["x10","Points"]] },
+    { name: "Crown Sphere", chance: "1 in 5k", owned: "Maxed at 2.2k", color: "#c9bd45", stats: [["x6","Balls"],["x12","Exp"],["x2","Fire"],["x12","Points"]] },
+    { name: "Infinity Orb", chance: "1 in 750k", owned: "Maxed at 20k", color: "#c84ac4", stats: [["x7","Balls"],["x15","Exp"],["x5","Fire"],["x3","Nebulosa"],["x15","Points"],["x5","Rune Bulk"],["x5","Rune Luck"]] },
+    { name: "Omega Sphere", chance: "1 in 100Oc", owned: "Maxed at 63k", color: "#c48ac4", stats: [["x10","Black Hole"],["x10","Cosmic Dust"],["x20","Nebulosa"],["x8","Rarity Bulk"],["x8","Rarity Luck"],["x6","Rarity Speed"],["x4","Rune Bulk"],["x4","Rune Luck"]] }
+  ]
+};
 
 const runeGrid = document.getElementById("runeGrid");
 
@@ -148,8 +88,8 @@ function openRune(name, number) {
   const statsGrid = document.getElementById("statsGrid");
   statsGrid.innerHTML = "";
 
-  if (number === 2) {
-    pointsRuneStats.forEach(card => {
+  if (runeData[number]) {
+    runeData[number].forEach(card => {
       let statsHTML = "";
 
       card.stats.forEach(stat => {
@@ -162,8 +102,10 @@ function openRune(name, number) {
         `;
       });
 
+      const compactClass = card.stats.length >= 7 ? " compact-card" : "";
+
       statsGrid.innerHTML += `
-        <div class="custom-stat-card" style="background:${card.color};">
+        <div class="custom-stat-card${compactClass}" style="background:${card.color};">
           <h3>${card.name}</h3>
           <h4>[${card.chance}]</h4>
           <h4>${card.owned}</h4>
@@ -189,10 +131,16 @@ function getStatClass(stat) {
   if (stat === "Exp") return "exp";
   if (stat === "Points") return "points";
   if (stat === "Balls") return "balls";
+  if (stat === "Fire") return "fire";
   if (stat === "Nebulosa") return "nebulosa";
   if (stat === "Rune Bulk") return "rune-bulk";
   if (stat === "Rune Luck") return "rune-luck";
   if (stat === "Rune Speed") return "rune-speed";
+  if (stat === "Black Hole") return "black-hole";
+  if (stat === "Cosmic Dust") return "cosmic-dust";
+  if (stat === "Rarity Bulk") return "rarity-bulk";
+  if (stat === "Rarity Luck") return "rarity-luck";
+  if (stat === "Rarity Speed") return "rarity-speed";
   return "";
 }
 
