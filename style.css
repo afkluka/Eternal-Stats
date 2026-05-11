@@ -170,9 +170,9 @@ footer {
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-  margin-top: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
 }
 
 .stat-picture {
@@ -190,9 +190,23 @@ footer {
 }
 
 .popup-box {
-  width: 850px;
-  max-height: 80vh;
+  width: 1200px;
+  max-width: 92vw;
+
+  max-height: 82vh;
+
   overflow-y: auto;
+
+  background: #1f1f27;
+
+  border: 3px solid #ff8c00;
+
+  border-radius: 26px;
+
+  padding: 24px;
+
+  box-shadow:
+    0 0 60px rgba(0,0,0,0.6);
 }
 
 .custom-stat-card {
