@@ -34,8 +34,98 @@
 
 <script>
 const runes = [
-  "Rune 1", "Rune 2", "Rune 3", "Rune 4", "Rune 5",
-  "Rune 6", "Rune 7", "Rune 8", "Rune 9", "Rune 10"
+  { name: "Rune 1" },
+  { name: "Points Rune" },
+  { name: "Rune 3" },
+  { name: "Rune 4" },
+  { name: "Rune 5" },
+  { name: "Rune 6" },
+  { name: "Rune 7" },
+  { name: "Rune 8" },
+  { name: "Rune 9" },
+  { name: "Rune 10" }
+];
+
+const pointsRuneStats = [
+  {
+    name: "Point Prism",
+    chance: "1 in 2",
+    owned: "You own 24Qn",
+    color: "#c9b987",
+    stats: [
+      ["x5", "Exp"],
+      ["x5", "Points"]
+    ]
+  },
+  {
+    name: "Score Core",
+    chance: "1 in 50",
+    owned: "You own 24Qn",
+    color: "#78c47a",
+    stats: [
+      ["x6", "Exp"],
+      ["x6", "Points"]
+    ]
+  },
+  {
+    name: "Pulse Token",
+    chance: "1 in 200",
+    owned: "You own 24Qn",
+    color: "#6799c9",
+    stats: [
+      ["x2", "Balls"],
+      ["x7", "Exp"],
+      ["x7", "Points"]
+    ]
+  },
+  {
+    name: "Mind Shard",
+    chance: "1 in 1k",
+    owned: "You own 24Qn",
+    color: "#a961c9",
+    stats: [
+      ["x3", "Balls"],
+      ["x8", "Exp"],
+      ["x8", "Points"]
+    ]
+  },
+  {
+    name: "Echo Point",
+    chance: "1 in 5k",
+    owned: "You own 24Qn",
+    color: "#c9bd45",
+    stats: [
+      ["x4", "Balls"],
+      ["x10", "Exp"],
+      ["x10", "Points"]
+    ]
+  },
+  {
+    name: "Apex Counter",
+    chance: "1 in 75k",
+    owned: "You own 24Qn",
+    color: "#c84ac4",
+    stats: [
+      ["x5", "Balls"],
+      ["x10", "Exp"],
+      ["x2", "Nebulosa"],
+      ["x10", "Points"],
+      ["x4", "Rune Bulk"],
+      ["x4", "Rune Luck"]
+    ]
+  },
+  {
+    name: "Eternity Prism",
+    chance: "1 in 5Sp",
+    owned: "You own 145M",
+    color: "#76b7cc",
+    stats: [
+      ["x250", "Exp"],
+      ["x1k", "Points"],
+      ["x10", "Rune Bulk"],
+      ["x15", "Rune Speed"]
+    ]
+  }
 ];
 
 const runeGrid = document.getElementById("runeGrid");
@@ -44,9 +134,9 @@ runes.forEach((rune, index) => {
   const number = index + 1;
 
   runeGrid.innerHTML += `
-    <div class="rune-card" onclick="openRune('${rune}', ${number})">
-      <h3>${rune}</h3>
-      <img class="rune-preview" src="images/rune${number}.png" alt="${rune}">
+    <div class="rune-card" onclick="openRune('${rune.name}', ${number})">
+      <h3>${rune.name}</h3>
+      <img class="rune-preview" src="images/rune${number}.png" alt="${rune.name}">
       <p>Click to view stats</p>
     </div>
   `;
@@ -58,15 +148,52 @@ function openRune(name, number) {
   const statsGrid = document.getElementById("statsGrid");
   statsGrid.innerHTML = "";
 
-  for (let i = 1; i <= 7; i++) {
-    statsGrid.innerHTML += `
-      <div class="stat-picture">
-        <img src="images/rune${number}-stat${i}.png" alt="${name} stat ${i}">
-      </div>
-    `;
+  if (number === 2) {
+    pointsRuneStats.forEach(card => {
+      let statsHTML = "";
+
+      card.stats.forEach(stat => {
+        statsHTML += `
+          <div class="stat-line">
+            <span class="multi">${stat[0]}</span>
+            <span class="${getStatClass(stat[1])}">${stat[1]}</span>
+            <span class="max">[Max]</span>
+          </div>
+        `;
+      });
+
+      statsGrid.innerHTML += `
+        <div class="custom-stat-card" style="background:${card.color};">
+          <h3>${card.name}</h3>
+          <h4>[${card.chance}]</h4>
+          <h4>${card.owned}</h4>
+          <div class="card-line"></div>
+          ${statsHTML}
+        </div>
+      `;
+    });
+  } else {
+    for (let i = 1; i <= 7; i++) {
+      statsGrid.innerHTML += `
+        <div class="stat-picture">
+          <img src="images/rune${number}-stat${i}.png" alt="${name} stat ${i}">
+        </div>
+      `;
+    }
   }
 
   document.getElementById("popup").style.display = "flex";
+}
+
+function getStatClass(stat) {
+  if (stat === "Exp") return "exp";
+  if (stat === "Points") return "points";
+  if (stat === "Balls") return "balls";
+  if (stat === "Nebulosa") return "nebulosa";
+  if (stat === "Rune Bulk") return "rune-bulk";
+  if (stat === "Rune Luck") return "rune-luck";
+  if (stat === "Rune Speed") return "rune-speed";
+  return "";
 }
 
 function closeRune() {
