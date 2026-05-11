@@ -158,3 +158,39 @@ footer {
   padding: 25px;
   color: #aaa;
 }
+
+.rune-preview {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 15px auto;
+  display: block;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 15px;
+}
+
+.stat-picture {
+  background: #111;
+  border: 2px solid #333;
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 190px;
+}
+
+.stat-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.popup-box {
+  width: 850px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
