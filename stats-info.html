@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Eternal Stats Info</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <h1>Eternal Stats</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="runes.html">Runes</a>
+    <a href="stats-info.html">Stats Info</a>
+  </nav>
+</header>
+
+<main class="stats-info-page">
+  <section class="stats-info-box">
+    <h2>Stats Info</h2>
+    <p class="stats-info-subtitle">Search and read Eternal Stats information.</p>
+
+    <input 
+      type="text" 
+      id="infoSearch" 
+      class="info-search" 
+      placeholder="Search stats info..."
+      onkeyup="searchInfo()"
+    >
+
+    <div id="infoContent" class="info-content">
+
+      <div class="info-section">
+        <h3>Example Info</h3>
+        <p>Send me the information you want here and I will replace this text.</p>
+      </div>
+
+      <div class="info-section">
+        <h3>Rune Info</h3>
+        <p>You can search by stat name, boost name, rune name, or any text written on this page.</p>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<script>
+function searchInfo() {
+  const input = document.getElementById("infoSearch").value.toLowerCase();
+  const sections = document.querySelectorAll(".info-section");
+
+  sections.forEach(section => {
+    const text = section.innerText.toLowerCase();
+
+    if (text.includes(input)) {
+      section.style.display = "block";
+    } else {
+      section.style.display = "none";
+    }
+  });
+}
+</script>
+
+<footer>
+  <p>Made by Despecfy</p>
+</footer>
+
+</body>
+</html>
