@@ -557,3 +557,23 @@ footer {
     0 4px 0 #9b4500,
     0 0 25px rgba(255,140,0,0.45);
 }
+
+.home-buttons-row {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.stats-info-button {
+  background: linear-gradient(180deg, #52d6ff, #008cff);
+  box-shadow:
+    0 9px 0 #00599b,
+    0 0 30px rgba(0,140,255,0.45);
+}
+
+.stats-info-button:hover {
+  box-shadow:
+    0 14px 0 #00599b,
+    0 0 45px rgba(0,140,255,0.65);
+}
