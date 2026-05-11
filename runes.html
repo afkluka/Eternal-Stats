@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Eternal Stats Runes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <h1>⚡ Eternal Stats</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="guides.html">Guides</a>
+    <a href="runes.html">Runes</a>
+  </nav>
+</header>
+
+<section class="page">
+  <h2>Runes</h2>
+  <p>Click a rune to view its stats.</p>
+
+  <div class="rune-grid">
+
+    <div class="rune-card" onclick="openRune('images/rune1.png')">
+      <h3>Rune 1</h3>
+      <div class="rune-img">Put Image Here</div>
+      <p>Click to view stats</p>
+    </div>
+
+    <div class="rune-card" onclick="openRune('images/rune2.png')">
+      <h3>Rune 2</h3>
+      <div class="rune-img">Put Image Here</div>
+      <p>Click to view stats</p>
+    </div>
+
+    <div class="rune-card" onclick="openRune('images/rune3.png')">
+      <h3>Rune 3</h3>
+      <div class="rune-img">Put Image Here</div>
+      <p>Click to view stats</p>
+    </div>
+
+    <div class="rune-card" onclick="openRune('images/rune4.png')">
+      <h3>Rune 4</h3>
+      <div class="rune-img">Put Image Here</div>
+      <p>Click to view stats</p>
+    </div>
+
+    <div class="rune-card" onclick="openRune('images/rune5.png')">
+      <h3>Rune 5</h3>
+      <div class="rune-img">Put Image Here</div>
+      <p>Click to view stats</p>
+    </div>
+
+    <div class="rune-card" onclick="openRune('images/rune6.png')">
+      <h3>Rune 6</h3>
+      <div class="rune-img">Put Image Here</div>
+      <p>Click to view stats</p>
+    </div>
+
+    <div class="rune-card" onclick="openRune('images/rune7.png')">
+      <h3>Rune 7</h3>
+      <div class="rune-img">Put Image Here</div>
+      <p>Click to view stats</p>
+    </div>
+
+    <div class="rune-card" onclick="openRune('images/rune8.png')">
+      <h3>Rune 8</h3>
+      <div class="rune-img">Put Image Here</div>
+      <p>Click to view stats</p>
+    </div>
+
+    <div class="rune-card" onclick="openRune('images/rune9.png')">
+      <h3>Rune 9</h3>
+      <div class="rune-img">Put Image Here</div>
+      <p>Click to view stats</p>
+    </div>
+
+    <div class="rune-card" onclick="openRune('images/rune10.png')">
+      <h3>Rune 10</h3>
+      <div class="rune-img">Put Image Here</div>
+      <p>Click to view stats</p>
+    </div>
+
+  </div>
+</section>
+
+<div id="popup" class="popup">
+  <div class="popup-box">
+    <button onclick="closeRune()">×</button>
+    <img id="popup-img" src="">
+  </div>
+</div>
+
+<script>
+function openRune(image) {
+  document.getElementById("popup-img").src = image;
+  document.getElementById("popup").style.display = "flex";
+}
+
+function closeRune() {
+  document.getElementById("popup").style.display = "none";
+}
+</script>
+
+<footer>
+  <p>Made by Despecfy</p>
+</footer>
+
+</body>
+</html>
