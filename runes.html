@@ -40,7 +40,7 @@ const runes = [
   { name: "Fire Rune" },
   { name: "Clicks Rune" },
   { name: "Water Rune" },
-  { name: "Rune 7" },
+  { name: "Star Rune" },
   { name: "Rune 8" },
   { name: "Rune 9" },
   { name: "Rune 10" }
@@ -113,6 +113,22 @@ const runeData = {
   { name: "Leviathan Heart", chance: "1 in 5B", owned: "Maxed at 600k", color: "#7878cf", stats: [["x5","Cosmic Dust"],["x13","Exp"],["x5","Nebulosa"],["x12","Points"],["x2","Rarity Bulk"],["x2","Rarity Luck"],["x6","Rune Bulk"],["x6","Rune Luck"],["x5","Water"]] },
 
   { name: "Timeless Crest", chance: "1 in 500Sp", owned: "Maxed at 225k", color: "#b4d0d1", stats: [["x10","Black Hole"],["x10","Cosmic Dust"],["x20","Nebulosa"],["x8","Rarity Bulk"],["x8","Rarity Luck"],["x6","Rarity Speed"],["x10","Rune Bulk"],["x10","Rune Luck"]] }
+],
+
+  7: [
+  { name: "Stellar Dust", chance: "1 in 2", owned: "Maxed at 4k", color: "#c9c39f", stats: [["x5","Clicks"],["x5","Exp"],["x5","Stars"],["x5","Water"]] },
+
+  { name: "Nova Fragment", chance: "1 in 250", owned: "Maxed at 2.5k", color: "#c7ad78", stats: [["x6","Clicks"],["x6","Exp"],["x6","Points"],["x6","Stars"],["x6","Water"]] },
+
+  { name: "Galaxy Shard", chance: "1 in 1k", owned: "Maxed at 2k", color: "#a4abc9", stats: [["x7","Clicks"],["x7","Exp"],["x7","Points"],["x7","Stars"],["x7","Water"]] },
+
+  { name: "Supernova Core", chance: "1 in 2k", owned: "Maxed at 1.4k", color: "#c48762", stats: [["x8","Clicks"],["x8","Exp"],["x8","Points"],["x8","Stars"],["x8","Water"]] },
+
+  { name: "Astral Prism", chance: "1 in 6k", owned: "Maxed at 800", color: "#96b7c9", stats: [["x9","Clicks"],["x9","Exp"],["x9","Points"],["x9","Stars"],["x9","Water"]] },
+
+  { name: "Infinite Constellation", chance: "1 in 100B", owned: "Maxed at 9M", color: "#c56fa4", stats: [["x20","Cosmic Dust"],["x10","Exp"],["x5","Nebulosa"],["x2","Rarity Bulk"],["x2","Rarity Luck"],["x4","Rune Bulk"],["x5","Rune Luck"],["x10","Stars"]] },
+
+  { name: "Epoch Halo", chance: "1 in 10De", owned: "Maxed at 63k", color: "#c8c88f", stats: [["x10","Black Hole"],["x10","Cosmic Dust"],["x20","Nebulosa"],["x8","Rarity Bulk"],["x8","Rarity Luck"],["x6","Rarity Speed"],["x3","Rune Bulk"],["x3","Rune Luck"]] }
 ],
 };
 
@@ -193,6 +209,7 @@ function getStatClass(stat) {
   if (stat === "Click Exp") return "click-exp";
   if (stat === "Stars") return "stars";
   if (stat === "Water") return "water";
+  if (stat === "Stars") return "stars";
   return "";
 }
 
