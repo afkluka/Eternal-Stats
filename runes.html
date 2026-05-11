@@ -20,81 +20,52 @@
   <h2>Runes</h2>
   <p>Click a rune to view its stats.</p>
 
-  <div class="rune-grid">
-
-    <div class="rune-card" onclick="openRune('images/rune1.png')">
-      <h3>Rune 1</h3>
-      <div class="rune-img">Put Image Here</div>
-      <p>Click to view stats</p>
-    </div>
-
-    <div class="rune-card" onclick="openRune('images/rune2.png')">
-      <h3>Rune 2</h3>
-      <div class="rune-img">Put Image Here</div>
-      <p>Click to view stats</p>
-    </div>
-
-    <div class="rune-card" onclick="openRune('images/rune3.png')">
-      <h3>Rune 3</h3>
-      <div class="rune-img">Put Image Here</div>
-      <p>Click to view stats</p>
-    </div>
-
-    <div class="rune-card" onclick="openRune('images/rune4.png')">
-      <h3>Rune 4</h3>
-      <div class="rune-img">Put Image Here</div>
-      <p>Click to view stats</p>
-    </div>
-
-    <div class="rune-card" onclick="openRune('images/rune5.png')">
-      <h3>Rune 5</h3>
-      <div class="rune-img">Put Image Here</div>
-      <p>Click to view stats</p>
-    </div>
-
-    <div class="rune-card" onclick="openRune('images/rune6.png')">
-      <h3>Rune 6</h3>
-      <div class="rune-img">Put Image Here</div>
-      <p>Click to view stats</p>
-    </div>
-
-    <div class="rune-card" onclick="openRune('images/rune7.png')">
-      <h3>Rune 7</h3>
-      <div class="rune-img">Put Image Here</div>
-      <p>Click to view stats</p>
-    </div>
-
-    <div class="rune-card" onclick="openRune('images/rune8.png')">
-      <h3>Rune 8</h3>
-      <div class="rune-img">Put Image Here</div>
-      <p>Click to view stats</p>
-    </div>
-
-    <div class="rune-card" onclick="openRune('images/rune9.png')">
-      <h3>Rune 9</h3>
-      <div class="rune-img">Put Image Here</div>
-      <p>Click to view stats</p>
-    </div>
-
-    <div class="rune-card" onclick="openRune('images/rune10.png')">
-      <h3>Rune 10</h3>
-      <div class="rune-img">Put Image Here</div>
-      <p>Click to view stats</p>
-    </div>
-
-  </div>
+  <div class="rune-grid" id="runeGrid"></div>
 </section>
 
 <div id="popup" class="popup">
   <div class="popup-box">
     <button onclick="closeRune()">×</button>
-    <img id="popup-img" src="">
+    <h2 id="popup-title">Rune</h2>
+
+    <div class="stats-grid" id="statsGrid"></div>
   </div>
 </div>
 
 <script>
-function openRune(image) {
-  document.getElementById("popup-img").src = image;
+const runes = [
+  "Rune 1", "Rune 2", "Rune 3", "Rune 4", "Rune 5",
+  "Rune 6", "Rune 7", "Rune 8", "Rune 9", "Rune 10"
+];
+
+const runeGrid = document.getElementById("runeGrid");
+
+runes.forEach((rune, index) => {
+  const number = index + 1;
+
+  runeGrid.innerHTML += `
+    <div class="rune-card" onclick="openRune('${rune}', ${number})">
+      <h3>${rune}</h3>
+      <img class="rune-preview" src="images/rune${number}.png" alt="${rune}">
+      <p>Click to view stats</p>
+    </div>
+  `;
+});
+
+function openRune(name, number) {
+  document.getElementById("popup-title").textContent = name;
+
+  const statsGrid = document.getElementById("statsGrid");
+  statsGrid.innerHTML = "";
+
+  for (let i = 1; i <= 7; i++) {
+    statsGrid.innerHTML += `
+      <div class="stat-picture">
+        <img src="images/rune${number}-stat${i}.png" alt="${name} stat ${i}">
+      </div>
+    `;
+  }
+
   document.getElementById("popup").style.display = "flex";
 }
 
