@@ -344,3 +344,57 @@ footer {
 
   color: #8b8b8b;
 }
+
+.fire {
+  color: #ff3b13;
+}
+
+.black-hole {
+  color: #2020ff;
+}
+
+.cosmic-dust {
+  color: #6d6d6d;
+}
+
+.rarity-bulk {
+  color: #ff3333;
+}
+
+.rarity-luck {
+  color: #00ff44;
+}
+
+.rarity-speed {
+  color: #00eaff;
+}
+
+.compact-card .stat-line {
+  font-size: 15px;
+  margin: 1px 0;
+}
+
+.compact-card h3 {
+  font-size: 23px;
+}
+
+.compact-card h4 {
+  font-size: 16px;
+  margin: 4px 0;
+}
+
+.compact-card .card-line {
+  margin: 10px auto 12px auto;
+}
+
+.clicks {
+  color: #00c8ff;
+}
+
+.click-exp {
+  color: #9569ff;
+}
+
+.stars {
+  color: #ffe59a;
+}
