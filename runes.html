@@ -8,7 +8,7 @@
 <body>
 
 <header class="topbar">
-  <h1>⚡ Eternal Stats</h1>
+  <h1>Eternal Stats</h1>
   <nav>
     <a href="index.html">Home</a>
     <a href="guides.html">Guides</a>
@@ -34,7 +34,7 @@
 
 <script>
 const runes = [
-  { name: "Rune 1" },
+  { name: "Global Premium Rune" },
   { name: "Points Rune" },
   { name: "Balls Rune" },
   { name: "Fire Rune" },
@@ -47,6 +47,20 @@ const runes = [
 ];
 
 const runeData = {
+  1: [
+  { name: "Gilded Spark", chance: "1 in 1", owned: "INF", color: "#c8c08f", stats: [["xINF","Exp"],["xINF","Points"]] },
+
+  { name: "Royal Seal", chance: "1 in 10", owned: "INF", color: "#97c48f", stats: [["xINF","Balls"],["xINF","Exp"],["xINF","Points"]] },
+
+  { name: "Velvet Pass", chance: "1 in 55", owned: "Rune Luck Maxed at 100 Runes", color: "#c79ac7", stats: [["xINF","Balls"],["xINF","Exp"],["xINF","Points"],["x1.5","Rune Luck"]] },
+
+  { name: "Sovereign Crest", chance: "1 in 750", owned: "Rune Bulk/Luck Maxed at 134 Runes", color: "#7d96c9", stats: [["xINF","Exp"],["x3","Rune Bulk"],["x3","Rune Luck"]] },
+
+  { name: "Imperial Vault", chance: "1 in 2.5k", owned: "Rune Bulk/Luck Maxed at 40 Runes", color: "#c9bd45", stats: [["x3","Rune Bulk"],["x3","Rune Luck"]] },
+
+  { name: "Eternal Patron", chance: "1 in 10k", owned: "Rune Bulk/Luck Maxed at 27", color: "#c93d3d", stats: [["x5","Rune Bulk"],["+3","Rune Clone"],["x5","Rune Luck"],["x1.5","Rune Speed"]] }
+],
+  
   2: [
     { name: "Point Prism", chance: "1 in 2", owned: "Maxed at 2k Runes", color: "#c9b987", stats: [["x5","Exp"],["x5","Points"]] },
     { name: "Score Core", chance: "1 in 50", owned: "Maxed at 1.7k Runes", color: "#78c47a", stats: [["x6","Exp"],["x6","Points"]] },
@@ -258,6 +272,7 @@ function getStatClass(stat) {
   if (stat === "Stars") return "stars";
   if (stat === "Water") return "water";
   if (stat === "Stars") return "stars";
+  if (stat === "Rune Clone") return "rune-clone";
   return "";
 }
 
