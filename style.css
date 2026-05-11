@@ -406,3 +406,8 @@ footer {
 .stars {
   color: #ffe59a;
 }
+
+.custom-stat-card:has(h3:first-child:last-child),
+.custom-stat-card .empty-card {
+  opacity: 0.55;
+}
