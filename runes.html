@@ -39,7 +39,7 @@ const runes = [
   { name: "Balls Rune" },
   { name: "Fire Rune" },
   { name: "Clicks Rune" },
-  { name: "Rune 6" },
+  { name: "Water Rune" },
   { name: "Rune 7" },
   { name: "Rune 8" },
   { name: "Rune 9" },
@@ -97,6 +97,22 @@ const runeData = {
   { name: "Infinite Switch", chance: "1 in 200M", owned: "Maxed at 22k", color: "#b164c9", stats: [["x7","Click Exp"],["x7","Clicks"],["x12","Exp"],["x4","Nebulosa"],["x12","Points"],["x2","Rarity Luck"],["x3.2","Rune Bulk"],["x3.2","Rune Luck"]] },
 
   { name: "Chrono Switch", chance: "1 in 100No", owned: "Maxed at 100k", color: "#c58ac1", stats: [["x10","Click Exp"],["x18","Clicks"],["x15","Exp"],["x5","Nebulosa"],["x15","Points"],["x4","Rarity Luck"],["x4","Rune Bulk"],["x4","Rune Luck"],["x8","Stars"]] }
+],
+
+  6: [
+  { name: "Droplet Seed", chance: "1 in 2", owned: "Maxed at 4k", color: "#9dc9cf", stats: [["x5","Exp"],["x5","Points"],["x2","Water"]] },
+
+  { name: "Tidal Core", chance: "1 in 100", owned: "Maxed at 2.5k", color: "#7eb4c9", stats: [["x6","Exp"],["x6","Points"],["x3","Water"]] },
+
+  { name: "Mist Sigil", chance: "1 in 250", owned: "Maxed at 2k", color: "#77a7cc", stats: [["x7","Exp"],["x7","Points"],["x4","Water"]] },
+
+  { name: "Current Orb", chance: "1 in 1k", owned: "Maxed at 1.8k", color: "#6791c7", stats: [["x10","Exp"],["x10","Points"],["x5","Water"]] },
+
+  { name: "Abyss Crest", chance: "1 in 5k", owned: "Maxed at 900", color: "#5b7fd6", stats: [["x10","Exp"],["x10","Points"],["x6","Water"]] },
+
+  { name: "Leviathan Heart", chance: "1 in 5B", owned: "Maxed at 600k", color: "#7878cf", stats: [["x5","Cosmic Dust"],["x13","Exp"],["x5","Nebulosa"],["x12","Points"],["x2","Rarity Bulk"],["x2","Rarity Luck"],["x6","Rune Bulk"],["x6","Rune Luck"],["x5","Water"]] },
+
+  { name: "Timeless Crest", chance: "1 in 500Sp", owned: "Maxed at 225k", color: "#b4d0d1", stats: [["x10","Black Hole"],["x10","Cosmic Dust"],["x20","Nebulosa"],["x8","Rarity Bulk"],["x8","Rarity Luck"],["x6","Rarity Speed"],["x10","Rune Bulk"],["x10","Rune Luck"]] }
 ],
 };
 
@@ -176,6 +192,7 @@ function getStatClass(stat) {
   if (stat === "Clicks") return "clicks";
   if (stat === "Click Exp") return "click-exp";
   if (stat === "Stars") return "stars";
+  if (stat === "Water") return "water";
   return "";
 }
 
