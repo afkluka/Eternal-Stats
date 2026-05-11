@@ -118,19 +118,39 @@
 </main>
 
 <script>
+const sections = document.querySelectorAll(".info-section");
+
+sections.forEach(section => {
+  section.dataset.original = section.innerHTML;
+});
+
 function searchInfo() {
-  const input = document.getElementById("infoSearch").value.toLowerCase();
-  const sections = document.querySelectorAll(".info-section");
+  const input = document.getElementById("infoSearch").value.trim();
+  const search = input.toLowerCase();
 
   sections.forEach(section => {
+    section.innerHTML = section.dataset.original;
+
+    if (search === "") {
+      section.style.display = "block";
+      return;
+    }
+
     const text = section.innerText.toLowerCase();
 
-    if (text.includes(input)) {
+    if (text.includes(search)) {
       section.style.display = "block";
+
+      const regex = new RegExp(`(${escapeRegExp(input)})`, "gi");
+      section.innerHTML = section.innerHTML.replace(regex, `<mark>$1</mark>`);
     } else {
       section.style.display = "none";
     }
   });
+}
+
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 </script>
 
