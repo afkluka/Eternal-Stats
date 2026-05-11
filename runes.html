@@ -38,7 +38,7 @@ const runes = [
   { name: "Points Rune" },
   { name: "Balls Rune" },
   { name: "Fire Rune" },
-  { name: "Rune 5" },
+  { name: "Clicks Rune" },
   { name: "Rune 6" },
   { name: "Rune 7" },
   { name: "Rune 8" },
@@ -81,6 +81,22 @@ const runeData = {
   { name: "Phoenix Heart", chance: "1 in 10M", owned: "Maxed at 400k", color: "#c87522", stats: [["x7","Balls"],["x2","Clicks"],["x15","Exp"],["x8","Fire"],["x5","Nebulosa"],["x15","Points"],["x5","Rune Bulk"],["x5","Rune Luck"]] },
 
   { name: "Everflame Core", chance: "1 in 3No", owned: "Maxed at 63k", color: "#c9bd8f", stats: [["x10","Black Hole"],["x10","Cosmic Dust"],["x20","Nebulosa"],["x8","Rarity Bulk"],["x8","Rarity Luck"],["x6","Rarity Speed"],["x3","Rune Bulk"],["x3","Rune Luck"]] }
+],
+
+  5: [
+  { name: "Tap Spark", chance: "1 in 2", owned: "Maxed at 4k", color: "#8fc4c9", stats: [["x2","Clicks"],["x5","Exp"],["x5","Points"]] },
+
+  { name: "Rhythm Chip", chance: "1 in 100", owned: "Maxed at 2.5k", color: "#7fb2c9", stats: [["x2","Click Exp"],["x3","Clicks"],["x6","Exp"],["x6","Points"]] },
+
+  { name: "Combo Sigil", chance: "1 in 250", owned: "Maxed at 2k", color: "#7199c9", stats: [["x3","Click Exp"],["x4","Clicks"],["x7","Exp"],["x7","Points"]] },
+
+  { name: "Tempo Core", chance: "1 in 1k", owned: "Maxed at 3k", color: "#7b86c6", stats: [["x4","Click Exp"],["x5","Clicks"],["x10","Exp"],["x10","Points"]] },
+
+  { name: "Echo Trigger", chance: "1 in 5k", owned: "Maxed at 4k", color: "#8a6bc9", stats: [["x5","Click Exp"],["x6","Clicks"],["x10","Exp"],["x10","Points"]] },
+
+  { name: "Infinite Switch", chance: "1 in 200M", owned: "Maxed at 22k", color: "#b164c9", stats: [["x7","Click Exp"],["x7","Clicks"],["x12","Exp"],["x4","Nebulosa"],["x12","Points"],["x2","Rarity Luck"],["x3.2","Rune Bulk"],["x3.2","Rune Luck"]] },
+
+  { name: "Chrono Switch", chance: "1 in 100No", owned: "Maxed at 100k", color: "#c58ac1", stats: [["x10","Click Exp"],["x18","Clicks"],["x15","Exp"],["x5","Nebulosa"],["x15","Points"],["x4","Rarity Luck"],["x4","Rune Bulk"],["x4","Rune Luck"],["x8","Stars"]] }
 ],
 };
 
@@ -157,6 +173,9 @@ function getStatClass(stat) {
   if (stat === "Rarity Bulk") return "rarity-bulk";
   if (stat === "Rarity Luck") return "rarity-luck";
   if (stat === "Rarity Speed") return "rarity-speed";
+  if (stat === "Clicks") return "clicks";
+  if (stat === "Click Exp") return "click-exp";
+  if (stat === "Stars") return "stars";
   return "";
 }
 
