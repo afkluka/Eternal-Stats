@@ -474,3 +474,65 @@ footer {
 .nav-buttons a:active {
   transform: scale(0.97);
 }
+
+.chance-wrapper{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+}
+
+.luck-calc{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+}
+
+.luck-input{
+    width:120px;
+
+    padding:8px 10px;
+
+    border:none;
+    outline:none;
+
+    border-radius:14px;
+
+    background:rgba(0,0,0,0.18);
+
+    border:2px solid rgba(255,255,255,0.15);
+
+    color:white;
+
+    font-family:'Fredoka',sans-serif;
+    font-size:15px;
+    font-weight:700;
+
+    text-align:center;
+
+    transition:0.15s;
+}
+
+.luck-input:focus{
+    border-color:white;
+    transform:scale(1.03);
+}
+
+.luck-input::placeholder{
+    color:rgba(255,255,255,0.65);
+}
+
+.luck-result{
+    font-family:'Fredoka',sans-serif;
+    font-size:15px;
+    font-weight:800;
+
+    color:white;
+
+    text-shadow:
+    -2px 0 #000,
+    2px 0 #000,
+    0 -2px #000,
+    0 2px #000;
+}
