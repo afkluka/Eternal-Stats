@@ -536,3 +536,15 @@ footer {
     0 -2px #000,
     0 2px #000;
 }
+
+.tree {
+  color: #00ff4c;
+}
+
+.tree-speed {
+  color: #74ffd2;
+}
+
+.energy {
+  color: #69ffd1;
+}
