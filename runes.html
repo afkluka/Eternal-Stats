@@ -45,6 +45,8 @@ const runes = [
   { name: "Cosmic Rune" },
   { name: "Nebulosa Rune" },
   { name: "Black Hole Rune" },
+  { name: "Tree Rune" },
+  { name: "Wind Turbine Rune" },
 ];
 
 const runeData = {
@@ -193,6 +195,38 @@ const runeData = {
 
   { name: "Oblivion Crown", chance: "1 in 1Sx", owned: "Maxed at 40B Runes", color: "#b9a9c8", stats: [["x1k","Black Hole"],["x1M","Cosmic Dust"],["x10","Rarity Bulk"],["x15","Rarity Luck"],["x10","Rarity Speed"],["x25","Rune Bulk"],["x25","Rune Luck"],["x25","Rune Speed"]] }
 ],
+
+  11: [
+  { name: "Sapling Seed", chance: "1 in 1", owned: "Soon", color: "#83c98a", stats: [["x5","Tree Speed"],["x5","Water"]] },
+
+  { name: "Bark Core", chance: "1 in 10Qd", owned: "Soon", color: "#755f4a", stats: [["x3","Exp"],["x10","Tree Speed"],["x10","Water"]] },
+
+  { name: "Canopy Sigil", chance: "1 in 10Qd", owned: "Soon", color: "#62a968", stats: [["x4","Exp"],["x1.5","Tree"],["x15","Tree Speed"],["x15","Water"]] },
+
+  { name: "Root Crown", chance: "1 in 10Qn", owned: "Soon", color: "#9a805d", stats: [["x5","Cosmic Dust"],["x2","Tree"],["x20","Tree Speed"],["x20","Water"]] },
+
+  { name: "Verdant Heart", chance: "1 in 100Qn", owned: "Soon", color: "#55c978", stats: [["x6","Exp"],["x2","Tree"],["x25","Tree Speed"],["x25","Water"]] },
+
+  { name: "Worldwood Halo", chance: "1 in 10Sp", owned: "Soon", color: "#8fc47c", stats: [["x7","Exp"],["x3","Rune Bulk"],["x3","Rune Luck"],["x2.5","Tree"],["x30","Tree Speed"],["x30","Water"]] },
+
+  { name: "???", chance: "???", owned: "Soon", color: "#a9bd98", stats: [["???",""]] }
+],
+
+  12: [
+  { name: "Breeze Cell", chance: "1 in 1", owned: "Soon", color: "#aec7bd", stats: [["x2","Energy"]] },
+
+  { name: "Zephyr Core", chance: "1 in 100", owned: "Soon", color: "#8fc4c9", stats: [["x3","Energy"],["x3","Exp"]] },
+
+  { name: "Gale Sigil", chance: "1 in 100k", owned: "Soon", color: "#78b8c9", stats: [["x4","Energy"],["x7","Exp"],["x7","Water"]] },
+
+  { name: "Cyclone Orb", chance: "1 in 10M", owned: "Soon", color: "#67a3c9", stats: [["x5","Energy"],["x8","Exp"],["x1.5","Tree"],["x8","Water"]] },
+
+  { name: "Tempest Crest", chance: "1 in 10B", owned: "Soon", color: "#7489c9", stats: [["x6","Energy"],["x10","Exp"],["x2","Tree"],["x10","Water"]] },
+
+  { name: "???", chance: "???", owned: "Soon", color: "#b2a1c5", stats: [["???",""]] },
+
+  { name: "???", chance: "???", owned: "Soon", color: "#b2a1c5", stats: [["???",""]] }
+],
 };
 
 const runeGrid = document.getElementById("runeGrid");
@@ -296,6 +330,9 @@ function getStatClass(stat) {
   if (stat === "Water") return "water";
   if (stat === "Stars") return "stars";
   if (stat === "Rune Clone") return "rune-clone";
+  if (stat === "Tree") return "tree";
+  if (stat === "Tree Speed") return "tree-speed";
+  if (stat === "Energy") return "energy";
   return "";
 }
 
